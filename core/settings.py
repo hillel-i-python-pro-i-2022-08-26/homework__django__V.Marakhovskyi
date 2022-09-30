@@ -40,7 +40,7 @@ DJANGO_APPS = [
 ]
 
 LOCAL_APPS = [
-    "apps.greetings.apps.ExampleConfig",
+    "apps.greetings.apps.GreetingsConfig",
 ]
 
 THIRD_PARTY_APPS = []
