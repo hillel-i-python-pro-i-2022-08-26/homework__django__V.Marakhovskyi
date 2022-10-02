@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
- <div>
-     <p>{{ random_message }}</p>
- </div>
-</body>
-</html>
+{% extends '_helpers/_base.html' %}
+
+{% block body %}
+    <p>{{ random_message }}</p>
+{% endblock %}
+
