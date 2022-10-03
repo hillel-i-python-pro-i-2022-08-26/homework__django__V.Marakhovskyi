@@ -1,4 +1,4 @@
-# Homework # 8. (Django. Templates)
+# Homework # 9. (Django. Templates)
 
 ---
 ![Main workflow](https://github.com/hillel-i-python-pro-i-2022-08-26/homework__django__V.Marakhovskyi/actions/workflows/main-workflow.yml/badge.svg?branch=templates)
