@@ -2,11 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>
+        {% if title %}
+            {{ title }}
+        {% else %}
+            Something
+        {% endif %}
+        | My site
+    </title>
 </head>
 <body>
-{% block body %}
+{% include '_helpers/_headers.html' %}
+
+{% block content %}
 Hello!
 {% endblock %}
 </body>
-</html>
+</html> 
