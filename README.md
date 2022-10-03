@@ -7,7 +7,7 @@
 
 ## 👨‍💻 Homework
 
-General features o Django framework. Creating simple project.
+General features o Django framework. Creating simple project with templates
 
 ### ▶️ Run
 
