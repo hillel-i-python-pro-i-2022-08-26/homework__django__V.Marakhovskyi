@@ -14,4 +14,3 @@ def greetings_view(request: HttpRequest, name: str | None = None) -> HttpRespons
             "greetings": f"Hello {name}, nice to meet you!",
         },
     )
-    # return HttpResponse(f"Hello, {name}, nice to meet you!")

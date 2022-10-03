@@ -7,12 +7,14 @@ from apps.humans.services import generate_humans
 # Create your views here.
 
 
-def get_humans(request: HttpRequest) -> HttpResponse:
+def get_humans(request: HttpRequest, amount=None) -> HttpResponse:
+    if amount is None:
+        amount = 10
     return render(
         request,
         "humans/index.html",
         {
-            "humans": generate_humans(amount=10),
+            "humans": generate_humans(amount=amount),
             "title": "Humans",
         },
     )

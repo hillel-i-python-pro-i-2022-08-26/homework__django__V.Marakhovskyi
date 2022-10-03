@@ -6,4 +6,5 @@ app_name = "humans"
 
 urlpatterns = [
     path("", views.get_humans, name="index"),
+    path("<int:amount>", views.get_humans, name="index"),
 ]
