@@ -1,7 +1,11 @@
 {% extends '_helpers/_base.html' %}
 
 {% block content %}
-    <p>
-        <span>{{ greetings }}</span>
-    </p>
+    <div>
+        <h3>Greetings page</h3>
+            <p>This page is randomly generate a name for greetings message. You can also enter a name in a URL and get a generated message with that name.</p>
+            <p>
+                <span>{{ greetings }}</span>
+            </p>
+    </div>
 {% endblock %}

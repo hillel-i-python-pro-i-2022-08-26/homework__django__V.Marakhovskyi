@@ -12,5 +12,6 @@ def greetings_view(request: HttpRequest, name: str | None = None) -> HttpRespons
         "greetings/index.html",
         {
             "greetings": f"Hello {name}, nice to meet you!",
+            "title": "Greetings",
         },
     )

@@ -14,3 +14,4 @@ black==22.8.0
 # Check codestyle
 flake8==5.0.4
 # [code_style]-[END]
+random-username==1.0.2
