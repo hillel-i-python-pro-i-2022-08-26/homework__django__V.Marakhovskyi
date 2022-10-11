@@ -1,7 +1,7 @@
 .PHONY: homework-i-run
 # Run homework.
 homework-i-run:
-	@python ./manage.py runserver
+	@python manage.py runserver
 
 .PHONY: homework-i-purge
 # Delete all created artifacts, related with homework execution
