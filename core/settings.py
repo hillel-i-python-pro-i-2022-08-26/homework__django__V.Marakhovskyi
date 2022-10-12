@@ -44,7 +44,7 @@ LOCAL_APPS = [
     "apps.greetings.apps.GreetingsConfig",
     "apps.homepage.apps.BaseConfig",
     "apps.userdata.apps.UserdataConfig",
-    "apps.animals",
+    "apps.contacts",
 ]
 
 THIRD_PARTY_APPS = []
