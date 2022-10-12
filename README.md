@@ -30,4 +30,17 @@ Delete all created artifacts from run.
 ```shell
 make homework-i-purge
 ```
+### ♻️ Make migrations
 
+Make migrations
+
+```shell
+make migrations
+```
+### 💾 Migrate
+
+Migrate
+
+```shell
+make migrate
+```
