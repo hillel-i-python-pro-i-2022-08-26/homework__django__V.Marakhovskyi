@@ -7,7 +7,7 @@
 ![DJANGO](https://www.djangoproject.com/m/img/badges/djangomade124x25.gif)
 ## 👨‍💻 Homework
 
-General features o Django framework. Adding models and commands.
+General features o Django framework. Adding model for contacts list and commands generating and deleting it.
 
 ### ▶️ Run
 
