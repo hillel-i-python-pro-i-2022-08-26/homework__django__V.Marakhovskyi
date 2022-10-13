@@ -17,7 +17,7 @@ class Command(BaseCommand):
         parser.add_argument(
             "--amount",
             type=int,
-            default=10,
+            default=50,
             help="Amount of generated contacts",
         )
 

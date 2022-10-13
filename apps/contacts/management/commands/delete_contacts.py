@@ -19,7 +19,7 @@ class Command(BaseCommand):
 
         query = models.Contact.objects
 
-        required_datetime = timezone.now() - timezone.timedelta(seconds=5)
+        required_datetime = timezone.now() - timezone.timedelta(seconds=10)
         query = query.order_by("created_at").filter(created_at__lt=required_datetime).filter(is_auto_generated=True)
         total_amount, details = query.delete()
 
