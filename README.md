@@ -1,4 +1,4 @@
-# Homework # 9. (Django. Templates)
+# Homework # 11. (Contacts and commands)
 
 ---
 ![Main workflow](https://github.com/hillel-i-python-pro-i-2022-08-26/homework__django__V.Marakhovskyi/actions/workflows/main-workflow.yml/badge.svg?branch=templates)
@@ -7,7 +7,7 @@
 
 ## 👨‍💻 Homework
 
-General features o Django framework. Creating simple project with templates
+General features o Django framework. Adding models and commands.
 
 ### ▶️ Run
 
@@ -32,15 +32,33 @@ make homework-i-purge
 ```
 ### ♻️ Make migrations
 
-Make migrations
+Create a migrations
 
 ```shell
 make migrations
 ```
 ### 💾 Migrate
 
-Migrate
+Apply a migration
 
 ```shell
 make migrate
+```
+### 📗 Command: generate contacts
+
+Default value - 50 contacts
+
+```shell
+make generate-contacts
+```
+For custom generation with desired amount use a terminal command:
+```shell
+python manage.py generate_contacts --amount <desired qtty>
+```
+### 📕 Command: delete contacts
+
+Deleting all auto-generated contacts
+
+```shell
+make delete-contacts
 ```

@@ -36,3 +36,13 @@ migrations:
 # Migrate
 migrate:
 	@python manage.py migrate
+
+.PHONY: generate-contacts
+# Generate contacts (default = 50)
+generate-contacts:
+	@python manage.py generate_contacts
+
+.PHONY: delete-contacts
+# Deleting all auto-generated contacts
+delete-contacts:
+	@python manage.py delete_contacts

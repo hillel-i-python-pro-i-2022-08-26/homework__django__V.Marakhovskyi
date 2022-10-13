@@ -26,4 +26,4 @@ class Command(BaseCommand):
         self.logger.info(f"Amount of deleted contacts : {total_amount}")
 
         amount_after_generating = models.Contact.objects.all().count()
-        self.logger.info(f"Amount of contacts after action: {amount_after_generating}")
+        self.logger.info(f"Amount of contacts after deleting: {amount_after_generating}")
