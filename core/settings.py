@@ -45,12 +45,19 @@ LOCAL_APPS = [
     "apps.homepage.apps.BaseConfig",
     "apps.userdata.apps.UserdataConfig",
     "apps.contacts",
+    "apps.employee_register.apps.EmployeeRegisterConfig",
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 THIRD_PARTY_APPS = []
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

@@ -2,7 +2,7 @@
 django==4.1.2
 
 # Name generating
-faker==15.1.0
+faker==15.1.1
 
 # [code_style]-[BEGIN]
 # Pre-commit hook.
@@ -14,3 +14,7 @@ black==22.10.0
 # Check codestyle
 flake8==5.0.4
 # [code_style]-[END]
+
+# For appealing forms
+
+crispy-bootstrap5==0.7
