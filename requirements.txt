@@ -16,5 +16,4 @@ flake8==5.0.4
 # [code_style]-[END]
 
 # For appealing forms
-
 crispy-bootstrap5==0.7
