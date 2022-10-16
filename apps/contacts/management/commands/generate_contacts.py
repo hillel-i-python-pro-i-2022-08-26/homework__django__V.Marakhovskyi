@@ -3,7 +3,7 @@ import logging
 from django.core.management import BaseCommand, CommandParser
 
 from apps.contacts import models
-from apps.contacts.services import generate_contacts
+from apps.contacts.services.generate_contacts import generate_contacts
 
 
 class Command(BaseCommand):
