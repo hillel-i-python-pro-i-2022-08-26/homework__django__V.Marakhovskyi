@@ -45,7 +45,6 @@ LOCAL_APPS = [
     "apps.homepage.apps.BaseConfig",
     "apps.userdata.apps.UserdataConfig",
     "apps.contacts",
-    "apps.employee_register.apps.EmployeeRegisterConfig",
     "crispy_forms",
     "crispy_bootstrap5",
 ]
