@@ -21,6 +21,9 @@
                 <td>{{contact.phone_number}}</td>
                 <td>{{contact.date_of_birth}}</td>
                 <td>
+                    <a href="{% url 'contacts:update' contact.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
                     <form action="{% url 'contacts:delete' contact.id %}" method="post" class="d-inline">
                         {% csrf_token %}
                         <button type="submit" class="btn">
