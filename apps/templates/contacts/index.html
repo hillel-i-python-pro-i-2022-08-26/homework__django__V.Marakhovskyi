@@ -9,6 +9,9 @@
             <td>Full Name</td>
             <td>Phone number</td>
             <td>Date of birth</td>
+            <a href="{% url 'contacts:crud' %}" class="btn btn-outline-success">
+                <i class="fas fa-plus"></i> Add New
+            </a>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +20,14 @@
                 <td>{{contact.full_name }}</td>
                 <td>{{contact.phone_number}}</td>
                 <td>{{contact.date_of_birth}}</td>
+                <td>
+                    <form action="{% url 'contacts:delete' contact.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
             </tr>
         {% endfor %}
     </tbody>
