@@ -13,7 +13,7 @@ def crud_contacts(request: HttpRequest) -> HttpResponse:
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect("contacts:index")
+            return redirect("contacts:read")
     else:
         form = ContactForm()
     return render(request, "contacts/form.html", {"form": form})

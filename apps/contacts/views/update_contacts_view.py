@@ -11,7 +11,7 @@ def update_contact(request: HttpRequest, id: int) -> HttpResponse:
         form = ContactForm(request.POST, instance=contact)
         if form.is_valid():
             form.save()
-            return redirect("contacts:index")
+            return redirect("contacts:read")
         return render(request, "contacts/form.html", {"form": form})
     else:
         form = ContactForm(instance=contact)
