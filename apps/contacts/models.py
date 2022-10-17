@@ -15,7 +15,9 @@ class Contact(models.Model):
     modified_at = models.DateTimeField(auto_now=True)
     is_auto_generated = models.BooleanField(default=False)
 
-    group = models.ForeignKey(Group, related_name="contacts", on_delete=models.CASCADE)
+    group = models.ForeignKey(
+        Group, related_name="contacts", on_delete=models.CASCADE, default=None, blank=True, null=True
+    )
 
     def __str__(self) -> str:
         return f"{self.full_name} - {self.phone_number}"
