@@ -45,11 +45,13 @@ LOCAL_APPS = [
     "apps.homepage.apps.BaseConfig",
     "apps.userdata.apps.UserdataConfig",
     "apps.contacts",
+    "apps.users",
+]
+
+THIRD_PARTY_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
 ]
-
-THIRD_PARTY_APPS = []
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
