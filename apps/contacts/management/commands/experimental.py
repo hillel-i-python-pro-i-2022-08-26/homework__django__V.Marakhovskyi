@@ -16,4 +16,4 @@ class Command(BaseCommand):
         self.logger.info("Experimental")
         group = models.Group.objects.first()
 
-        related_contacts = group.contacts.all()
+        group.contacts.all()
