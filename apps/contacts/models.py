@@ -6,6 +6,11 @@ from apps.contacts.typing import T_NAME
 class Group(models.Model):
     relationship = models.CharField(max_length=100)
 
+    def __str__(self) -> str:
+        return self.relationship
+
+    __repr__ = __str__
+
 
 class Contact(models.Model):
     full_name: T_NAME = models.CharField(max_length=120)
