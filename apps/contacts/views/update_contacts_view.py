@@ -5,8 +5,8 @@ from apps.contacts.forms import ContactForm
 from apps.contacts.models import Contact
 
 
-def update_contact(request: HttpRequest, id: int) -> HttpResponse:
-    contact = Contact.objects.get(pk=id)
+def update_contact(request: HttpRequest, pk: int) -> HttpResponse:
+    contact = Contact.objects.get(pk=pk)
     if request.method == "POST":
         form = ContactForm(request.POST, instance=contact)
         if form.is_valid():
