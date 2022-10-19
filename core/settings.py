@@ -46,6 +46,7 @@ LOCAL_APPS = [
     "apps.userdata.apps.UserdataConfig",
     "apps.contacts",
     "apps.users",
+    "apps.session_info.apps.SessionsConfig",
 ]
 
 THIRD_PARTY_APPS = [
