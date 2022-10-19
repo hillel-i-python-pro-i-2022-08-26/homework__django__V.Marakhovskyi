@@ -1,13 +1,13 @@
-# Homework # 13. (Admin panel)
+# Homework # 14. (Sessions)
 
 ---
-![Main workflow](https://github.com/hillel-i-python-pro-i-2022-08-26/homework__django__V.Marakhovskyi/actions/workflows/main-workflow.yml/badge.svg?branch=admin)
+![Main workflow](https://github.com/hillel-i-python-pro-i-2022-08-26/homework__django__V.Marakhovskyi/actions/workflows/main-workflow.yml/badge.svg?branch=sessions)
 ![IDE](https://img.shields.io/badge/PyCharm-000000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white)
 ![REPO](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![DJANGO](https://www.djangoproject.com/m/img/badges/djangomade124x25.gif)
 ## 👨‍💻 Homework
 
-General features o Django framework. Creating a custom user for admin panel. Creating admin panel for existing models.
+General features o Django framework. Creating a view with session info: date & time, session key, count of entries.
 
 ### ▶️ Run
 
