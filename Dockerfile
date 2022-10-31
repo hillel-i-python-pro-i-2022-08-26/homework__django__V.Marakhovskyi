@@ -17,9 +17,15 @@ COPY --chown=${USER} requirements.txt requirements.txt
 RUN pip install --upgrade pip && \
     pip install --requirement requirements.txt
 
-COPY --chown=${USER} ./main.py main.py
-COPY --chown=${USER} ./application application
+COPY --chown=${USER} ./core core
+COPY --chown=${USER} ./apps apps
+COPY --chown=${USER} ./Makefile Makefile
+COPY --chown=${USER} ./manage.py manage.py
 
 USER ${USER}
 
-ENTRYPOINT ["python", "main.py"]
+EXPOSE 8000
+
+ENTRYPOINT ["python", "manage.py"]
+
+CMD ["runserver", "0.0.0.0:8000"]
