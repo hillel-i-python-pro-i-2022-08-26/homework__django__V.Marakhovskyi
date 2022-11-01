@@ -17,6 +17,9 @@ COPY --chown=${USER} requirements.txt requirements.txt
 RUN pip install --upgrade pip && \
     pip install --requirement requirements.txt
 
+COPY --chown=${USER} --chmod=755 ./docker/app/start.sh /start.sh
+COPY --chown=${USER} --chmod=755 ./docker/app/entrypoint.sh /entrypoint.sh
+
 COPY --chown=${USER} ./core core
 COPY --chown=${USER} ./apps apps
 COPY --chown=${USER} ./Makefile Makefile
@@ -26,6 +29,6 @@ USER ${USER}
 
 EXPOSE 8000
 
-ENTRYPOINT ["python", "manage.py"]
+ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["runserver", "0.0.0.0:8000"]
+CMD ["/start.sh"]

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cmd="$@"
+
 # [bash_init]-[BEGIN]
 # Exit whenever it encounters an error, also known as a non–zero exit code.
 set -o errexit
@@ -12,8 +14,4 @@ set -o nounset
 set -o xtrace
 # [bash_init]-[END]
 
-# Apply database migrations.
-make migrate
-
-# Run application.
-python manage.py runserver 0.0.0.0:8000
+exec $cmd

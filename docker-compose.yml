@@ -11,4 +11,4 @@ services:
     user: "1000"
     volumes:
       - ./db:/wd/db:rw
-    command: runserver 0.0.0.0:8000
+    command: /start.sh
