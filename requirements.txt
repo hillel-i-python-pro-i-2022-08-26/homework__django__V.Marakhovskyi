@@ -17,3 +17,5 @@ flake8==5.0.4
 
 # For appealing forms
 crispy-bootstrap5==0.7
+
+django-environ ==0.9.0
