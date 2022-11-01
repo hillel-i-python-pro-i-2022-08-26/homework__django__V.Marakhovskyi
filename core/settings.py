@@ -44,6 +44,7 @@ LOCAL_APPS = [
     "apps.greetings.apps.GreetingsConfig",
     "apps.homepage.apps.BaseConfig",
     "apps.userdata.apps.UserdataConfig",
+    "apps.contacts",
 ]
 
 THIRD_PARTY_APPS = []
@@ -88,7 +89,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR.joinpath("db", "db.sqlite3"),
     }
 }
 

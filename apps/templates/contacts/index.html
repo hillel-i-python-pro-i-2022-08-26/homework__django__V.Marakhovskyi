@@ -1,0 +1,18 @@
+{% extends '_helpers/_base.html' %}
+
+{% block content %}
+    <div style="font-size: small">
+        <h2>Contacts list</h2>
+            <ol>
+            {% for contact in contacts %}
+                <li>
+                    <div style="color: darkgreen; font-size: large">
+                        <p>Name: {{ contact.full_name }}</p>
+                    </div>
+                    <p> &#9990; Phone number: {{ contact.phone_number }}</p>
+                    <p> &bull; Date of birth: {{ contact.date_of_birth }}</p>
+                </li>
+            {% endfor %}
+            </ol>
+    </div>
+{% endblock %}
