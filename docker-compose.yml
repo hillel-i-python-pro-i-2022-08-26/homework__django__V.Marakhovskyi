@@ -1,7 +1,7 @@
 version: '3.8'
 
 volumes:
-  db_data: { }
+  postgres_data: { }
 
 services:
   app:
@@ -9,6 +9,15 @@ services:
     ports:
       - "8000:8000"
     user: "1000"
-    volumes:
-      - ./db:/wd/db:rw
+    env_file:
+      - .env
+    depends_on:
+      - postgres
     command: /start.sh
+
+  postgres:
+    image: postgres:15.0
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env

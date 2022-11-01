@@ -11,7 +11,8 @@ homework-i-purge:
 .PHONY: init-config
 # Init config files
 init-config:
-	@cp docker-compose.override.dev.yml docker-compose.override.yml
+	@cp docker-compose.override.dev.yml docker-compose.override.yml && \
+		cp .env.dev .env
 
 .PHONY: init-dev
 # Init environment for development
