@@ -1,7 +1,7 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 
-from .models import Contact
+from apps.contacts.models import Contact
 
 
 def get_contacts(request: HttpRequest) -> HttpResponse:

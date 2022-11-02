@@ -27,7 +27,12 @@ SECRET_KEY = "django-insecure-xk@ri&(0lzx+!!p2v5$st^4&6@un!ri5zp##)k5fl&$o@36qti
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+if DEBUG:
+    ALLOWED_HOSTS.extend(
+        [
+            "0.0.0.0",
+        ]
+    )
 
 # Application definition
 
@@ -45,12 +50,21 @@ LOCAL_APPS = [
     "apps.homepage.apps.BaseConfig",
     "apps.userdata.apps.UserdataConfig",
     "apps.contacts",
+    "apps.users",
+    "apps.session_info.apps.SessionsConfig",
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    "crispy_forms",
+    "crispy_bootstrap5",
+]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -63,6 +77,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "core.urls"
+
+AUTH_USER_MODEL = "users.User"
 
 TEMPLATES = [
     {

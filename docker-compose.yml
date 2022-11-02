@@ -1,0 +1,14 @@
+version: '3.8'
+
+volumes:
+  db_data: { }
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    user: "1000"
+    volumes:
+      - ./db:/wd/db:rw
+    command: /start.sh
