@@ -6,8 +6,9 @@
     <p>Here`s generating a full data for users. If you would like to change an amount of users - just enter a number in URL. Do not use great values</p>
     <ol>
         {% for user in userdata %}
-            <li> {{ user }} </li>
-            <hr>
+            <li style="border: 2px solid rgba(18,100,143,0.29); width: fit-content; border-radius: 5px; margin: .5em; padding: 0.2em">
+                {{ user }}
+            </li>
         {% endfor %}
     </ol>
 </div>
