@@ -1,0 +1,6 @@
+.my-first-style {
+    border: 2px solid rgba(18,100,143,0.29);
+    width: fit-content; border-radius: 5px;
+    margin: .5em;
+    padding: 0.2em;
+}

@@ -158,8 +158,10 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 STATICFILES_DIRS = [
-    APPS_DIR / "static",
+    APPS_DIR.joinpath("static"),
 ]
 
 # Default primary key field type
