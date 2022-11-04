@@ -1,3 +1,15 @@
+.logo {
+    width: 0.1em;
+    height: 0.1em;
+
+    text-align: center;
+
+}
+
+.logo-row {
+    text-align: center;
+}
+
 .my-element-style {
     width: fit-content;
 
@@ -15,4 +27,19 @@
 
 .my-element-style:hover {
     box-shadow: 1em 1em 1em rgb(234, 162, 18);
+}
+
+.header-example {
+    display: flex;
+    flex-flow: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.own-custom-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

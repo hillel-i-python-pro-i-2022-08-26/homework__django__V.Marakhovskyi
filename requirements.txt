@@ -15,7 +15,7 @@ black==22.10.0
 flake8==5.0.4
 # [code_style]-[END]
 
-# For appealing forms
+# For better view of forms
 crispy-bootstrap5==0.7
 
 # For environment variables and config.
