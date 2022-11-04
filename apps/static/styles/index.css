@@ -2,17 +2,17 @@
     width: fit-content;
 
     border-radius: 5px;
-    border: 1px solid blue;
+    border: 1px solid #ff0059;
 
     margin: .5em;
     padding: .2em;
 
-    background-color: #08c259;
-    text-shadow: 1px 1px 2px white;
+    background-color: rgba(245, 194, 0, 0.62);
+    text-shadow: 1px 1px 2px #48a82d;
 
     box-shadow: 0.1em 0.1em 0.5em rgba(255, 0, 0, 0.5);
 }
 
 .my-element-style:hover {
-    box-shadow: 1em 1em 1em rgb(255, 0, 0);
+    box-shadow: 1em 1em 1em rgb(234, 162, 18);
 }
