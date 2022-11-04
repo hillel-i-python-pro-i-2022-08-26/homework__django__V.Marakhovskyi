@@ -7,8 +7,12 @@
     margin: .5em;
     padding: .2em;
 
-    background-color: #eaeaea;
+    background-color: #08c259;
     text-shadow: 1px 1px 2px white;
 
-    box-shadow: 0.1em 0.1em 0.5em rgb(0 0 255 / 50%);
+    box-shadow: 0.1em 0.1em 0.5em rgba(255, 0, 0, 0.5);
+}
+
+.my-element-style:hover {
+    box-shadow: 1em 1em 1em rgb(255, 0, 0);
 }
