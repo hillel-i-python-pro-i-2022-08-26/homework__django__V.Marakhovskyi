@@ -2,35 +2,39 @@
 
 
 <header class="header-example">
-<nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'index' %}"> Navigation bar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}"><i class="fa-sharp fa-solid fa-house"></i> Homepage</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'greetings:greet' %}"><i class="fa-solid fa-hand"></i> Greetings</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{% url 'userdata:index' %}"><i class="fa-sharp fa-solid fa-user"></i> User Data generator</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="{% url 'contacts:read' %}"><i class="fa-sharp fa-solid fa-phone"></i> Contacts list</a>
-        </li>
-              <li class="nav-item">
-          <a class="nav-link" href="{% url 'session_info:index' %}"><i class="fa-sharp fa-solid fa-circle-info"></i> Session info</a>
-        </li>
-          </ul>
+            <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}">Navbar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}"><i class="fa-sharp fa-solid fa-house"></i> Homepage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'greetings:greet' %}"><i class="fa-solid fa-hand"></i>
+                            Greetings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'userdata:index' %}"><i class="fa-sharp fa-solid fa-user"></i>
+                            User Data generator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contacts:read' %}"><i class="fa-sharp fa-solid fa-phone"></i>
+                            Contacts list</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'session_info:index' %}"><i
+                                class="fa-sharp fa-solid fa-circle-info"></i> Session info</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
- </nav>
+    </nav>
 </header>
 
-        <div class="logo">
-    <img src="{% static "images/mylogo.svg" %}"/>
-    </div>
