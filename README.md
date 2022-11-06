@@ -1,18 +1,18 @@
-# Homework # 16. (Docker / Env / Postgres)
+# Homework # 17. (Styles (CSS) && Crispy-forms)
 
 ---
-![Main workflow](https://github.com/hillel-i-python-pro-i-2022-08-26/homework__django__V.Marakhovskyi/actions/workflows/main-workflow.yml/badge.svg?branch=docker)
+![Main workflow](https://github.com/hillel-i-python-pro-i-2022-08-26/homework__django__V.Marakhovskyi/actions/workflows/main-workflow.yml/badge.svg?branch=styles)
 ![IDE](https://img.shields.io/badge/PyCharm-000000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white)
 ![REPO](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![DJANGO](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![DB](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ## 👨‍💻 Homework
 
-Packing a Django project into a Docker using a .env files and PostgreSQL.
+Updating existed Django project with CSS styles and crispy-forms
 
-### ▶️ Run
+### 🎬 Run
 
-Make all actions needed for run homework from zero.
+Run an application from 0.
 
 ```shell
 make d-homework-i-run
