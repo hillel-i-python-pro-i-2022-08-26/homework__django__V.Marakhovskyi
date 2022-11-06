@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+@import url('https://fonts.googleapis.com/css?family=Oswald:700');
 
 .logo {
     width: 100%;
@@ -6,7 +7,7 @@
     justify-content: center;
 }
 .logo img {
-    width: 20em;
+    width: 10em;
     height: auto;
 
 }
@@ -18,19 +19,19 @@
     width: fit-content;
 
     border-radius: 5px;
-    border: 1px solid #ff0059;
+    border: 1px solid #000000;
 
     margin: .5em;
     padding: .2em;
 
-    background-color: rgba(245, 194, 0, 0.62);
-    text-shadow: 1px 1px 2px #48a82d;
+    background-color: rgba(238, 224, 210, 0.3);
+    text-shadow: 1px 1px 2px #e7dfdf;
 
-    box-shadow: 0.1em 0.1em 0.5em rgba(255, 0, 0, 0.5);
+    box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.34);
 }
 
 .my-element-style:hover {
-    box-shadow: 1em 1em 1em rgb(234, 162, 18);
+    box-shadow: 1em 1em 1em rgba(21, 21, 20, 0.43);
 }
 
 .header-example {
@@ -65,12 +66,9 @@
 
 /*aaaa*/
 
-@import url('https://fonts.googleapis.com/css?family=Oswald:700');
-@import url('https://fonts.googleapis.com/css?family=Rubik');
-
 body {
-  background-color: rgba(83, 151, 220, 0.96);
-  background-image:radial-gradient(rgba(248, 173, 46, 0.8), rgba(30, 0, 255, 0.43));
+  background-color: rgba(219, 224, 229, 0.96);
+  background-image:radial-gradient(rgba(252, 252, 252, 0.74), rgba(0, 0, 0, 0.41));
   background-size:100%;
   background-repeat:no-repeat;
   background-attachment:fixed;
