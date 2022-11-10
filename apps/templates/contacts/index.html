@@ -9,6 +9,7 @@
             <td>Full Name</td>
             <td>Phone number</td>
             <td>Date of birth</td>
+            <td>Photo</td>
             <a href="{% url 'contacts:create' %}" class="btn btn-outline-success">
                 <i class="fas fa-plus"></i> Add New
             </a>
@@ -20,6 +21,7 @@
                 <td>{{contact.full_name }}</td>
                 <td>{{contact.phone_number}}</td>
                 <td>{{contact.date_of_birth}}</td>
+                <td>{{contact.photo}}</td>
                 <td>
                     <a href="{% url 'contacts:update' contact.pk %}" class="btn text-secondary px-0">
                         <i class="far fa-edit fa-lg"></i>
