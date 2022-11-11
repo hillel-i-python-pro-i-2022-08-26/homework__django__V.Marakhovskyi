@@ -4,7 +4,7 @@
 
 
 {% block content %}
-    <form action="" method="post" autocomplete="off">
+    <form method="POST" autocomplete="off" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.full_name|as_crispy_field }}
         {{ form.phone_number|as_crispy_field }}

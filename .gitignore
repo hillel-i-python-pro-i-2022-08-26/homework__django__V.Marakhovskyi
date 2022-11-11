@@ -133,3 +133,6 @@ db/*
 !db/.gitkeep
 
 docker-compose.override.yml
+
+media/*
+!media/.gitkeep

@@ -26,7 +26,7 @@
                     <a href="{% url 'contacts:update' contact.pk %}" class="btn text-secondary px-0">
                         <i class="far fa-edit fa-lg"></i>
                     </a>
-                    <form action="{% url 'contacts:delete' contact.pk %}" method="post" class="d-inline">
+                    <form action="{% url 'contacts:delete' contact.pk %}" method="post" class="d-inline" enctype="multipart/form-data">
                         {% csrf_token %}
                         <button type="submit" class="btn">
                             <i class="far fa-trash-alt fa-lg text-danger float-right"></i>

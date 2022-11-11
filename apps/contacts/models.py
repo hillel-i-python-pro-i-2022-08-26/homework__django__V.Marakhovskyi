@@ -12,8 +12,8 @@ class Group(models.Model):
     __repr__ = __str__
 
 
-def get_contact_photo(instance, filename) -> str:
-    return
+# def get_contact_photo(instance, filename) -> str:
+#     return
 
 
 class Contact(models.Model):
@@ -27,12 +27,7 @@ class Contact(models.Model):
     group = models.ForeignKey(
         Group, related_name="contacts", on_delete=models.CASCADE, default=None, blank=True, null=True
     )
-    photo = models.ImageField(
-        max_length=255,
-        blank=True,
-        null=True,
-        upload_to=get_contact_photo,
-    )
+    photo = models.ImageField(max_length=255, blank=True, null=True, upload_to="contacts/")
 
     def __str__(self) -> str:
         return f"{self.full_name} - {self.phone_number}"
