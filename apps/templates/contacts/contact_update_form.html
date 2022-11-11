@@ -1,0 +1,49 @@
+{#{% extends '_helpers/_base.html' %}#}
+{##}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>AAAAAAAAAA</title>#}
+{#    <form method="post">{% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <input type="submit" value="Update">#}
+{#</form>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+{% extends '_helpers/_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+
+    <h1>{{ title }}</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="form-row">
+            <div class="form-group col-md-6 mb-0">
+                {{ form.full_name|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.phone_number|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.date_of_birth|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.photo|as_crispy_field }}
+            </div>
+        </div>
+
+        <input type="submit" class="btn-sub" value="Update contact">
+    </form>
+    <a href="{% url 'contacts:read' %}" class="link-success">Back</a>
+
+{% endblock %}

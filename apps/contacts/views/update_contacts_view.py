@@ -1,5 +1,6 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
+from django.views.generic import UpdateView
 
 from apps.contacts.forms import ContactForm
 from apps.contacts.models import Contact
@@ -16,3 +17,14 @@ def update_contact(request: HttpRequest, pk: int) -> HttpResponse:
     else:
         form = ContactForm(instance=contact)
     return render(request, "contacts/form.html", {"form": form})
+
+
+class ContactUpdateView(UpdateView):
+    model = Contact
+    fields = (
+        "full_name",
+        "date_of_birth",
+        "phone_number",
+        "photo",
+    )
+    template_name_suffix = "_update_form"
