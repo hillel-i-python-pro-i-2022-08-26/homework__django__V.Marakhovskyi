@@ -1,14 +1,16 @@
 {% extends '_helpers/_base.html' %}
 
+
 {% block content %}
-    <span>
-        <h3>Welcome to the homepage.</h3>
-            <p>{{ welcome_message }}</p>
-                <p>
-            Here I will extend my first Django project.<br>
-            So, please be patient and soon you will see a great result!<br>
-            Meantime you can familiarize yourself with available implemented features.
-                </p>
-    </span>
+    <div id="rotate-words">
+<div>Welcome to the <br />  <span>my website</span></div>
+<div>Here I will extend<br />  <span>my first Django project</span></div>
+<div>So, please be patient<br />  <span>and soon</span></div>
+<div>A great result<br />  <span>will not be long in coming</span></div>
+<div>Welcome to the<br />  <span>my website</span></div>
+<div>Here I will extend<br />  <span>my first Django project</span></div>
+<div>So, please be patient<br />  <span>and soon</span></div>
+<div>A great result<br />  <span>will not be long in coming</span></div>
+</div>
 
 {% endblock %}

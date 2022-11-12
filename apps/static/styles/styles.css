@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+@import url('https://fonts.googleapis.com/css?family=Oswald:700');
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.logo img {
+    width: 10em;
+    height: auto;
+
+}
+.logo-row {
+    text-align: center;
+}
+
+.my-element-style {
+    width: fit-content;
+
+    border-radius: 5px;
+    border: 1px solid #000000;
+
+    margin: .5em;
+    padding: .2em;
+
+    background-color: rgba(238, 224, 210, 0.3);
+    text-shadow: 1px 1px 2px #e7dfdf;
+
+    box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.34);
+}
+
+.my-element-style:hover {
+    box-shadow: 1em 1em 1em rgba(21, 21, 20, 0.43);
+}
+
+.header-example {
+    display: flex;
+    flex-flow: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.own-custom-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-wrapper .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*aaaa*/
+
+body {
+  background-color: rgba(219, 224, 229, 0.96);
+  background-image:radial-gradient(rgba(252, 252, 252, 0.74), rgba(0, 0, 0, 0.41));
+  background-size:100%;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  color: #000000;
+  text-align:center;
+}
+
+#rotate-words {
+  max-width:400px;
+  margin:auto;
+  padding:20% 0;
+  font-size:2.2em;
+  text-transform:uppercase;
+  font-family: 'Oswald', sans-serif;
+}
+
+#rotate-words span {
+  display:block;
+  height:50px;
+  font-size:.7em;
+  text-transform:lowercase;
+  opacity:.8;
+  font-family: 'Rubik', sans-serif;
+}
+
+#rotate-words div {
+ position:absolute;
+ opacity:0;
+ overflow:hidden;
+ left:10vw;
+ width:80vw;
+ line-height:1.2em;
+ animation: rotate-word 32s linear infinite 0s;
+}
+
+@keyframes rotate-word {
+    0% { opacity: 0;  transform: translateX(0);filter:blur(10px);transform:scale(1.2)}
+    3% { opacity: 1;  transform: translateX(0);filter:blur(0px);transform:scale(.9)}
+    12% { opacity: 1; transform: translateX(0);filter:blur(0px);transform:scale(1)}
+    16% { opacity: 0; transform: translateX(0);filter:blur(10px);transform:scale(1.2)}
+    80% { opacity: 0}
+    100% { opacity: 0}
+}
+
+#rotate-words div:nth-child(2) { animation-delay: 4s}
+#rotate-words div:nth-child(3) { animation-delay: 8s}
+#rotate-words div:nth-child(4) { animation-delay: 12s}
+#rotate-words div:nth-child(5) { animation-delay: 16s}
+#rotate-words div:nth-child(6) { animation-delay: 20s}
+#rotate-words div:nth-child(7) { animation-delay: 24s}
+#rotate-words div:nth-child(8) { animation-delay: 28s}
+
+@keyframes author {
+    0% { opacity: 0;  transform: translateY(100px);filter:blur(10px);transform: scaleY(2)}
+    20% { opacity:0; transform: translateY(200px);filter:blur(10px); transform: scaleY(2)}
+    30% { opacity:1; transform: translateY(0);filter:blur(0px);transform: scaleY(1)}
+    90% { opacity:1; transform: translateY(0);filter:blur(0px);transform: scaleY(.9)}
+    100% { opacity:0; transform: translateY(0);filter:blur(10px);transform: scale(2)}
+}
