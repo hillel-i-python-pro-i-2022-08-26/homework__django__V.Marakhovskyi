@@ -10,10 +10,10 @@ from apps.contacts.models import Contact
 #         if form.is_valid():
 #             form.save()
 #             return redirect("contacts:read")
-#         return render(request, "contacts/contact_form.html", {"form": form})
+#         return render(request, "contacts/contact_create_form.html", {"form": form})
 #     else:
 #         form = ContactForm(instance=contact)
-#     return render(request, "contacts/contact_form.html", {"form": form})
+#     return render(request, "contacts/contact_create_form.html", {"form": form})
 
 
 class ContactUpdateView(UpdateView):

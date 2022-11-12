@@ -14,7 +14,7 @@ def crud_contacts(request: HttpRequest) -> HttpResponse:
             return redirect("contacts:read")
     else:
         form = ContactForm()
-    return render(request, "contacts/contact_form.html", {"form": form})
+    return render(request, "contacts/contact_create_form.html", {"form": form})
 
 
 # class ContactListView(ListView):
@@ -29,7 +29,7 @@ def crud_contacts(request: HttpRequest) -> HttpResponse:
 #
 #
 # class ContactView(TemplateView):
-#     template_name = "contacts/contact_form.html"
+#     template_name = "contacts/contact_create_form.html"
 #
 #     def get_context_data(self, **kwargs):
 #         context = super().get_context_data(**kwargs)
@@ -42,3 +42,4 @@ def crud_contacts(request: HttpRequest) -> HttpResponse:
 class ContactCreateView(CreateView):
     model = Contact
     fields = ["full_name", "phone_number", "date_of_birth", "photo"]
+    template_name_suffix = "_create_form"
