@@ -64,7 +64,11 @@
     justify-content: center;
 }
 
-/*aaaa*/
+.contact-photo {
+    max-width: 5em;
+}
+
+/*below a classes for animation and background*/
 
 body {
   background-color: rgba(219, 224, 229, 0.96);

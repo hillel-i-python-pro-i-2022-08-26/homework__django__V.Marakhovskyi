@@ -1,0 +1,46 @@
+{% extends '_helpers/_base.html' %}
+
+{% block content %}
+    <table class="table table-borderless">
+        <thead class="border-bottom font-weight-bold">
+        <h2>Contacts list</h2>
+        <p>C.R.U.D ops through forms.</p>
+        <tr>
+            <td>Photo</td>
+            <td>Full Name</td>
+            <td>Phone Number</td>
+            <td>Date of Birth</td>
+            <a href="{% url 'contacts:create' %}" class="btn btn-outline-success">
+                <i class="fas fa-plus"></i> Add New
+            </a>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contact in object_list %}
+            <tr>
+                <td>
+                    {% if contact.photo %}
+                        <img class="contact-photo" src="{{ contact.photo.url }}" alt="{{ animal.name }}"/>
+                    {% endif %}
+                </td>
+                <td>{{ contact.full_name }}</td>
+                <td>{{ contact.phone_number }}</td>
+                <td>{{ contact.date_of_birth }}</td>
+                <td>
+                    <a href="{% url 'contacts:update' contact.pk %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="{% url 'contacts:delete' contact.pk %}" method="post" class="d-inline"
+                          enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock content %}
