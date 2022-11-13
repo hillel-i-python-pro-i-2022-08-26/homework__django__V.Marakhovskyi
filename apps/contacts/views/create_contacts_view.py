@@ -1,5 +1,6 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
 from apps.contacts.forms import ContactForm
@@ -43,6 +44,8 @@ class ContactCreateView(CreateView):
     model = Contact
     fields = ["full_name", "phone_number", "date_of_birth", "photo"]
     template_name_suffix = "_create_form"
+    # By default, the class looks for 'the get_absolute_url' function. Here purposefully it is redefined for practical purposes.
+    success_url = reverse_lazy("contacts:read")
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
