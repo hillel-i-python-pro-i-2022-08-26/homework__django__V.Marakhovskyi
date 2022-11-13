@@ -21,3 +21,8 @@ from apps.contacts.models import Contact
 class ArticleListView(ListView):
 
     model = Contact
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Contacts"
+        return context

@@ -43,3 +43,8 @@ class ContactCreateView(CreateView):
     model = Contact
     fields = ["full_name", "phone_number", "date_of_birth", "photo"]
     template_name_suffix = "_create_form"
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Create"
+        return context
