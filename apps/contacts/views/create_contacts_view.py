@@ -44,7 +44,8 @@ class ContactCreateView(CreateView):
     model = Contact
     fields = ["full_name", "phone_number", "date_of_birth", "photo"]
     template_name_suffix = "_create_form"
-    # By default, the class looks for 'the get_absolute_url' function. Here purposefully it is redefined for practical purposes.
+    # By default, the class looks for 'the get_absolute_url' function.
+    # Here purposefully it is redefined for practical purposes.
     success_url = reverse_lazy("contacts:read")
 
     def get_context_data(self, *, object_list=None, **kwargs):
