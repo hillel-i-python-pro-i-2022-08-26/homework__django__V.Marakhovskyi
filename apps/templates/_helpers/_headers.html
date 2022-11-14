@@ -2,7 +2,7 @@
 
 
 <header class="header-example">
-            <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'index' %}">Navbar
             </a>
@@ -33,6 +33,9 @@
                                 class="fa-sharp fa-solid fa-circle-info"></i> Session info</a>
                     </li>
                 </ul>
+                <span class="navbar-text">
+                    <a href="{% url 'auth:register' %}"> Sign Up </a> | <a href="{% url 'auth:login' %}"> Log In</a>
+                </span>
             </div>
         </div>
     </nav>

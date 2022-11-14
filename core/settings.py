@@ -59,6 +59,7 @@ LOCAL_APPS = [
     "apps.contacts",
     "apps.users",
     "apps.session_info.apps.SessionsConfig",
+    "apps.register.apps.RegisterConfig",
 ]
 
 THIRD_PARTY_APPS = [
