@@ -13,7 +13,7 @@ class SignUpForm(UserCreationForm):
     email = forms.EmailField(label="Email", widget=forms.EmailInput(attrs={"class": "form-control"}))
     password1 = forms.CharField(label="Password", widget=forms.PasswordInput(attrs={"class": "form-control"}))
     password2 = forms.CharField(label="Confirm password", widget=forms.PasswordInput(attrs={"class": "form-control"}))
-    avatar = forms.ImageField(label="Avatar")
+    avatar = forms.ImageField(label="Avatar", required=False)
 
     class Meta:
         model = User

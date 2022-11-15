@@ -33,14 +33,17 @@
                                 class="fa-sharp fa-solid fa-circle-info"></i> Session info</a>
                     </li>
                 </ul>
-                <span class="navbar-text">
+                <span class="btn btn-secondary">
                     {% if request.user.is_authenticated %}
-                        {% if user.avatar %}
-                        <img class="contact-photo" src="{{ user.avatar.url }}" alt="{{ user.username }}"/>
-                        {% endif %}
-                        {{ user.username }}| <a href="{% url 'auth:logout' %}">Log Out</a>
+                        {{ user.username }}                         {% if user.avatar %}
+                        <img class="rounded-img" src="{{ user.avatar.url }}" alt="{{ user.username }}"/>
+                    {% endif %}| <a href="{% url 'auth:logout' %}" class="btn btn-secondary">Log Out</a>
                     {% else %}
-                    <a href="{% url 'auth:register' %}"> Sign Up </a> | <a href="{% url 'auth:login' %}"> Log In</a>
+{#                        <a href="{% url 'auth:register' %}"> Sign Up </a> | <a href="{% url 'auth:login' %}"> Log In</a>#}
+                            <div class="btn-group" role="group" aria-label="Basic example">
+      <a href="{% url 'auth:register' %}" class="btn btn-secondary">Sign Up</a>
+      <a href="{% url 'auth:login' %}" class="btn btn-secondary">Log In</a>
+    </div>
                     {% endif %}
                 </span>
             </div>
