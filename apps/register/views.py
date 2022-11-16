@@ -4,12 +4,13 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 
 from apps.register.forms import SignUpForm
+from apps.users.models import User
 
 
-# def register(request):
+# def auth(request):
 #     if request.method == "POST":
 #         form = SignUpForm(request.POST)
 #         if form.is_valid():
@@ -21,7 +22,7 @@ from apps.register.forms import SignUpForm
 #             messages.error(request, "Registration failed")
 #     else:
 #         form = SignUpForm()
-#     return render(request, "auth/register.html", {"form": form})
+#     return render(request, "auth/auth.html", {"form": form})
 
 
 class RegisterUser(CreateView):
@@ -69,3 +70,24 @@ class UserLogin(LoginView):
 def user_logout(request):
     logout(request)
     return redirect("auth:login")
+
+
+class UserEditView(UpdateView):
+    # form_class = UserEditForm
+    model = User
+    fields = (
+        "username",
+        "email",
+        "avatar",
+    )
+    template_name = "auth/user_edit_form.html"
+    template_name_suffix = "_edit_form"
+    success_url = reverse_lazy("index")
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Edit user"
+        return context
+
+    def get_object(self):
+        return self.request.user

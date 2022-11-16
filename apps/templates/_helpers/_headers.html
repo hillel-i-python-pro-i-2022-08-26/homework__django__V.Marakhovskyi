@@ -36,12 +36,12 @@
                 <span class="btn btn-secondary">
                     {% if request.user.is_authenticated %}
                         {{ user.username }}                         {% if user.avatar %}
-                        <img class="rounded-img" src="{{ user.avatar.url }}" alt="{{ user.username }}"/>
-                    {% endif %}| <a href="{% url 'auth:logout' %}" class="btn btn-secondary">Log Out</a>
+                        <img class="user_icon" src="{{ user.avatar.url }}" alt="{{ user.username }}"/>
+                    {% endif %}| <a href="{% url 'auth:settings' user.pk %}" class="btn btn-secondary">Profile settings</a> <a href="{% url 'auth:logout' %}" class="btn btn-secondary">Log Out</a>
                     {% else %}
-{#                        <a href="{% url 'auth:register' %}"> Sign Up </a> | <a href="{% url 'auth:login' %}"> Log In</a>#}
+{#                        <a href="{% url 'auth:auth' %}"> Sign Up </a> | <a href="{% url 'auth:login' %}"> Log In</a>#}
                             <div class="btn-group" role="group" aria-label="Basic example">
-      <a href="{% url 'auth:register' %}" class="btn btn-secondary">Sign Up</a>
+      <a href="{% url 'auth:auth' %}" class="btn btn-secondary">Sign Up</a>
       <a href="{% url 'auth:login' %}" class="btn btn-secondary">Log In</a>
     </div>
                     {% endif %}

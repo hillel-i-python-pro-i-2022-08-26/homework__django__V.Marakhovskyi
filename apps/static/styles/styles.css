@@ -68,12 +68,13 @@
     max-width: 5em;
 }
 
-.rounded-img {
+.user_icon {
     max-width: 2em;
     border-radius: 20%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 0.1em;
 }
+
 
 /*below a classes for animation and background*/
 
