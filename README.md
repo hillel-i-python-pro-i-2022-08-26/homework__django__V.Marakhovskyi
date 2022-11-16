@@ -1,4 +1,4 @@
-# Homework # 18. (Uploading Media and redesign views for ClassBased standard)
+# Homework # 19. (User authorization)
 
 ---
 ![Main workflow](https://github.com/hillel-i-python-pro-i-2022-08-26/homework__django__V.Marakhovskyi/actions/workflows/main-workflow.yml/badge.svg?branch=login_and_auth)
