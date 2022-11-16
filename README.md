@@ -1,14 +1,14 @@
-# Homework # 17. (Styles (CSS) && Crispy-forms)
+# Homework # 18. (Uploading Media and redesign views for ClassBased standard)
 
 ---
-![Main workflow](https://github.com/hillel-i-python-pro-i-2022-08-26/homework__django__V.Marakhovskyi/actions/workflows/main-workflow.yml/badge.svg?branch=styles)
+![Main workflow](https://github.com/hillel-i-python-pro-i-2022-08-26/homework__django__V.Marakhovskyi/actions/workflows/main-workflow.yml/badge.svg?branch=media)
 ![IDE](https://img.shields.io/badge/PyCharm-000000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white)
 ![REPO](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![DJANGO](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![DB](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ## 👨‍💻 Homework
 
-Updating existed Django project with CSS styles and crispy-forms
+Updating existed Django project with media files and ClassBased Views
 
 ### 🎬 Run
 

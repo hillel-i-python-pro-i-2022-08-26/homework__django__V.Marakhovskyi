@@ -2,13 +2,13 @@
 django==4.1.2
 
 # Name generating
-faker==15.1.1
+faker==15.3.1
 
 # [code_style]-[BEGIN]
 # Pre-commit hook.
 pre-commit==2.20.0
 # Upgrade syntax.
-pyupgrade==2.38.2
+pyupgrade==3.2.2
 # Formatter. Apply codestyle.
 black==22.10.0
 # Check codestyle
@@ -22,3 +22,6 @@ crispy-bootstrap5==0.7
 django-environ==0.9.0
 # For DB connection.
 psycopg2-binary==2.9.5
+
+#For images in Django
+pillow==9.3.0
