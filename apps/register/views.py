@@ -1,13 +1,14 @@
 from django.contrib import messages
-from django.contrib.auth import login, logout
+from django.contrib.auth import login
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.views import LoginView
-from django.shortcuts import redirect
+from django.contrib.auth.views import LoginView, LogoutView
+from django.shortcuts import redirect, resolve_url
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
 
 from apps.register.forms import SignUpForm
 from apps.users.models import User
+from core import settings
 
 
 # def auth(request):
@@ -67,9 +68,20 @@ class UserLogin(LoginView):
         return reverse_lazy("index")
 
 
-def user_logout(request):
-    logout(request)
-    return redirect("auth:login")
+# def user_logout(request):
+#     logout(request)
+#     return redirect("auth:login")
+
+
+class UserLogout(LogoutView):
+    def get_default_redirect_url(self):
+        """Return the default redirect URL."""
+        if self.next_page:
+            return resolve_url(self.next_page)
+        elif settings.LOGOUT_REDIRECT_URL:
+            return resolve_url(settings.LOGOUT_REDIRECT_URL)
+        else:
+            return self.request.path
 
 
 class UserEditView(UpdateView):
