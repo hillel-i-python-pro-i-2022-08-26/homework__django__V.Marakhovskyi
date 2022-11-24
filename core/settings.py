@@ -60,6 +60,7 @@ LOCAL_APPS = [
     "apps.users",
     "apps.session_info.apps.SessionsConfig",
     "apps.register.apps.RegisterConfig",
+    "apps.middleware.apps.MiddlewareConfig",
 ]
 
 THIRD_PARTY_APPS = [
