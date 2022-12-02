@@ -1,0 +1,29 @@
+{% extends '_helpers/_base.html' %}
+
+{% block content %}
+    <table class="table table-borderless">
+        <thead class="border-bottom font-weight-bold">
+        <h2>All data from database</h2>
+        <p>Test</p>
+        <tr>
+            <td>User</td>
+            <td>Session key</td>
+            <td>Path</td>
+            <td>Count of visit</td>
+            <td>Last time of visit</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for visit in object_list %}
+            <tr>
+                <td>{{visit.user }}</td>
+                <td>{{visit.session_key }}</td>
+                <td>{{ visit.path }}</td>
+                <td>{{ visit.count_of_visits }}</td>
+                <td>{{ visit.time_of_visit }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock content %}
