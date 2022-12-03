@@ -1,6 +1,14 @@
 {% extends '_helpers/_base.html' %}
 
 {% block content %}
+    <h3>Total requests: {{ sum_of_requests }}</h3>
+    <h3>Quantity of pages: {{ qtty_o_pages }}</h3>
+    <a href="{% url 'middleware:session_info' %}" class="btn btn-secondary btn-block btn-lg">
+        <i class="fas fa-stream"></i> Current session
+    </a>
+    <a href="{% url 'middleware:user_info' %}" class="btn btn-secondary btn-block btn-lg">
+        <i class="fas fa-stream"></i> Current user
+    </a>
     <table class="table table-borderless">
         <thead class="border-bottom font-weight-bold">
         <h2>All data from database</h2>
@@ -16,8 +24,8 @@
         <tbody>
         {% for visit in object_list %}
             <tr>
-                <td>{{visit.user }}</td>
-                <td>{{visit.session_key }}</td>
+                <td>{{ visit.user }}</td>
+                <td>{{ visit.session_key }}</td>
                 <td>{{ visit.path }}</td>
                 <td>{{ visit.count_of_visits }}</td>
                 <td>{{ visit.time_of_visit }}</td>

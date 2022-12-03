@@ -3,10 +3,10 @@ from collections.abc import Callable
 
 from django.core.handlers.wsgi import WSGIRequest
 
-from apps.middleware_custom.models import SessionStatistic
+from apps.middleware_custom.models import ActionStatistic
 
 
-class SimpleLoggingMiddleware:
+class AllRequestLoggingMiddleware:
     def __init__(self, get_response: Callable):
         self.get_response = get_response
         self.logger = logging.getLogger("django")
@@ -28,32 +28,29 @@ class SimpleLoggingMiddleware:
         self.logger.info(http_message_for_logger)
         # Get_response__stop
 
-        visit_handler = SessionStatistic.objects.filter(
+        action_instance = ActionStatistic.objects.filter(
             session_key=request.session.session_key, path=request.path
         ).first()
 
-        if visit_handler is not None:
-            count_of_visits = visit_handler.count_of_visits + 1
+        if action_instance is not None:
+            count_of_visits = action_instance.count_of_visits + 1
         else:
             count_of_visits = 1
 
-        if request.user.is_authenticated:
-            user = request.user
-        else:
-            user = None
+        user = request.user if request.user.is_authenticated else None
 
         defaults = {"count_of_visits": count_of_visits, "user": user}
         try:
-            visit_handler = SessionStatistic.objects.get(session_key=request.session.session_key, path=request.path)
+            action_instance = ActionStatistic.objects.get(session_key=request.session.session_key, path=request.path)
             for key, value in defaults.items():
-                setattr(visit_handler, key, value)
-            visit_handler.save()
-        except SessionStatistic.DoesNotExist:
+                setattr(action_instance, key, value)
+            action_instance.save()
+        except ActionStatistic.DoesNotExist:
             if not request.session.session_key:
                 request.session.save()
             new_values = {"session_key": request.session.session_key, "path": request.path}
             new_values.update(defaults)
-            visit_handler = SessionStatistic(**new_values)
-            visit_handler.save()
+            action_instance = ActionStatistic(**new_values)
+            action_instance.save()
 
         return response
