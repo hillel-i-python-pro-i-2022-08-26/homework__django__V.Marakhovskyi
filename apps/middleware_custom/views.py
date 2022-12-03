@@ -46,7 +46,6 @@ class ExactSessionView(ListView):
 
 
 class ExactUserView(ListView):
-    # login_url = "/auth/login"
     model = ActionStatistic
     template_name = "middleware_custom/user_statistic.html"
 
@@ -65,11 +64,5 @@ class ExactUserView(ListView):
             context["qtty_o_pages"] = qtty_of_pages.get("path__count")
         else:
             context["title"] = "AAA"
-            messages.warning(self.request, "For monitoring statistic authorize first")
+            messages.warning(self.request, "For monitoring user statistic authorize first")
         return context
-
-    # def dispatch(self, request, *args, **kwargs):
-    #     if not request.user.is_authenticated:
-    #         messages.warning(request, "For monitoring statistic authorize first")
-    #         return self.handle_no_permission()
-    #     return super().dispatch(request, *args, **kwargs)

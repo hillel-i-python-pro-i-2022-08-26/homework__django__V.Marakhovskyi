@@ -83,8 +83,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "apps.middleware_custom.middleware.AllRequestLoggingMiddleware",
 ]
+
+if env.bool("MIDDLEWARE_CUSTOM", False):
+    # MIDDLEWARE += ["apps.middleware_custom.middleware.AllRequestLoggingMiddleware"]
+    MIDDLEWARE.extend(["apps.middleware_custom.middleware.AllRequestLoggingMiddleware"])
 
 ROOT_URLCONF = "core.urls"
 
