@@ -60,6 +60,7 @@ LOCAL_APPS = [
     "apps.users",
     "apps.session_info.apps.SessionsConfig",
     "apps.register.apps.RegisterConfig",
+    "apps.middleware_custom.apps.MiddlewareCustomConfig",
 ]
 
 THIRD_PARTY_APPS = [
@@ -83,6 +84,9 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+if env.bool("MIDDLEWARE_CUSTOM", False):
+    MIDDLEWARE.extend(["apps.middleware_custom.middleware.AllRequestLoggingMiddleware"])
 
 ROOT_URLCONF = "core.urls"
 
