@@ -1,4 +1,4 @@
-# Homework # 19. (User authorization)
+# Homework # 20. (Middlewares)
 
 ---
 ![Main workflow](https://github.com/hillel-i-python-pro-i-2022-08-26/homework__django__V.Marakhovskyi/actions/workflows/main-workflow.yml/badge.svg?branch=login_and_auth)
@@ -8,8 +8,9 @@
 ![DB](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ## 👨‍💻 Homework
 
-Updating existed Django project with user authorization.
-Only authorized users can access to "Contact list" page.
+Updating existed Django project with custom logging middleware.
+*Only authorized users can access to "Contact list" page and view action statistic for dedicated user.
+
 
 ### 🎬 Run
 
