@@ -86,7 +86,6 @@ MIDDLEWARE = [
 ]
 
 if env.bool("MIDDLEWARE_CUSTOM", False):
-    # MIDDLEWARE += ["apps.middleware_custom.middleware.AllRequestLoggingMiddleware"]
     MIDDLEWARE.extend(["apps.middleware_custom.middleware.AllRequestLoggingMiddleware"])
 
 ROOT_URLCONF = "core.urls"

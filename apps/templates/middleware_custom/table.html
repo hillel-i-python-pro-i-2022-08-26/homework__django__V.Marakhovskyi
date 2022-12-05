@@ -1,0 +1,39 @@
+<div class="middleware-custom">
+    <h4>Total requests: {{ sum_of_requests }}</h4>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            Filter by
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'middleware:session_info' %}">Current session</a>
+            <a class="dropdown-item" href="{% url 'middleware:user_info' %}">Current user</a>
+            <a class="dropdown-item" href="{% url 'middleware:all_info' %}">All actions</a>
+        </div>
+    </div>
+</div>
+
+    <table class="table table-borderless">
+        <thead class="border-bottom font-weight-bold">
+        <h5>Requested result </h5>
+        <tr>
+            <td>User</td>
+            <td>Session key</td>
+            <td>Path</td>
+            <td>Count of visit</td>
+            <td>Last time of visit</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for visit in object_list %}
+            <tr>
+                <td>{{ visit.user }}</td>
+                <td>{{ visit.session_key }}</td>
+                <td>{{ visit.path }}</td>
+                <td>{{ visit.count_of_visits }}</td>
+                <td>{{ visit.time_of_visit }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>

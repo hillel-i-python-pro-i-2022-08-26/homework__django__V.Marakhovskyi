@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Sum, Count
 from django.views.generic import ListView
 
@@ -45,7 +46,8 @@ class ExactSessionView(ListView):
         return context
 
 
-class ExactUserView(ListView):
+class ExactUserView(LoginRequiredMixin, ListView):
+    login_url = "/auth/login"
     model = ActionStatistic
     template_name = "middleware_custom/user_statistic.html"
 
@@ -53,16 +55,23 @@ class ExactUserView(ListView):
         context = super().get_context_data(**kwargs)
         context["title"] = "exact user info"
         # Get_useful_info__start
-        if self.request.user.is_authenticated:
-            action_instance = ActionStatistic.objects.filter(user=self.request.user.pk)
-            sum_of_requests = action_instance.aggregate(Sum("count_of_visits"))
-            qtty_of_pages = action_instance.aggregate(Count("path"))
+        # if self.request.user.is_authenticated:
+        action_instance = ActionStatistic.objects.filter(user=self.request.user.pk)
+        sum_of_requests = action_instance.aggregate(Sum("count_of_visits"))
+        qtty_of_pages = action_instance.aggregate(Count("path"))
 
-            # Get_useful_info__stop
-            context["object_list"] = action_instance
-            context["sum_of_requests"] = sum_of_requests.get("count_of_visits__sum")
-            context["qtty_o_pages"] = qtty_of_pages.get("path__count")
-        else:
-            context["title"] = "AAA"
-            messages.warning(self.request, "For monitoring user statistic authorize first")
+        # Get_useful_info__stop
+        context["object_list"] = action_instance
+        context["sum_of_requests"] = sum_of_requests.get("count_of_visits__sum")
+        context["qtty_o_pages"] = qtty_of_pages.get("path__count")
+
+        # else:
+        #     context["title"] = "AAA"
+        #     messages.warning(self.request, "For monitoring user statistic authorize first")
         return context
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.warning(request, "For monitoring user statistic authorize first")
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)
