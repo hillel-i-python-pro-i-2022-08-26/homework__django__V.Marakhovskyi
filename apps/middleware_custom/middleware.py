@@ -48,8 +48,7 @@ class AllRequestLoggingMiddleware:
         except ActionStatistic.DoesNotExist:
             if not request.session.session_key:
                 request.session.save()
-            new_values = {"session_key": request.session.session_key, "path": request.path}
-            new_values.update(defaults)
+            new_values = {"session_key": request.session.session_key, "path": request.path} | defaults
             action_instance = ActionStatistic(**new_values)
             action_instance.save()
 
