@@ -1,0 +1,36 @@
+{% extends '_helpers/_base.html' %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+    <h1>Edit user</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="own-custom-center">
+            <div class="col-md-8">
+                {{ form.non_field_errors }}
+                {{ form.username|as_crispy_field }}
+                {{ form.email|as_crispy_field }}
+                {{ form.avatar|as_crispy_field }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success btn-block btn-lg">
+            Edit
+        </button>
+    </form>
+
+{% endblock content %}
+
+
+
+
+{#{{ form.non_field_errors }}#}
+{#{{ form.full_name|as_crispy_field }}#}
+{#{{ form.phone_number|as_crispy_field }}#}
+{#<div class="row">#}
+{#    <div class="col-md-8">#}
+{#        {{ form.date_of_birth|as_crispy_field }}#}
+{#        {{ form.photo|as_crispy_field }}#}
+{#    </div>#}
+{#</div>#}

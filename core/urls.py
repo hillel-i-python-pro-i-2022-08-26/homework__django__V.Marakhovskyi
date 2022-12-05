@@ -26,6 +26,7 @@ urlpatterns = [
     path("userdata/", include("apps.userdata.urls")),
     path("contacts/", include("apps.contacts.urls")),
     path("session/", include("apps.session_info.urls")),
+    path("auth/", include("apps.register.urls")),
 ]
 
 if settings.DEBUG:
