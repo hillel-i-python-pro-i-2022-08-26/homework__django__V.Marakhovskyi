@@ -75,6 +75,11 @@
     padding: 0.1em;
 }
 
+.middleware-custom {
+    display: flex;
+    justify-content: space-between;
+
+}
 
 /*below a classes for animation and background*/
 

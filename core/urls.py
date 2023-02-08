@@ -27,6 +27,7 @@ urlpatterns = [
     path("contacts/", include("apps.contacts.urls")),
     path("session/", include("apps.session_info.urls")),
     path("auth/", include("apps.register.urls")),
+    path("middleware/", include("apps.middleware_custom.urls")),
 ]
 
 if settings.DEBUG:

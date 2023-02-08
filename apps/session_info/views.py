@@ -8,7 +8,7 @@ KEY__COUNT_OF_VISITS = "num_visits"
 
 
 def session_view(request: HttpRequest) -> HttpResponse:
-    num_visits = request.session.get(KEY__COUNT_OF_VISITS, 0)
+    num_visits = request.session.get(KEY__COUNT_OF_VISITS, 1)
     request.session[KEY__COUNT_OF_VISITS] = num_visits + 1
 
     json.JSONEncoder.default = lambda self, obj: (obj.isoformat() if isinstance(obj, datetime.datetime) else None)
