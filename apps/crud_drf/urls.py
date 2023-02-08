@@ -1,13 +1,15 @@
-from django.urls import path
+# from .views import ContactAPIView, ContactAPIUpdate, ContactAPIDetail, ContactViewSet
+from rest_framework import routers
 
-from .views import ContactAPIView
+from .views import ContactViewSet
 
-# router = routers.DefaultRouter()
-# router.register(r'contacts', views.ContactViewSet)
+router = routers.DefaultRouter()
+router.register(r"contacts", ContactViewSet)
 
 urlpatterns = [
-    path("general/", ContactAPIView.as_view()),
-    # path('update/<int:pk>/', ContactUpdateApi.as_view()),
-    # path('show/<int:pk>/', ContactViewApi.as_view()),
-    # path('delete/<int:pk>/', ContactDeleteApi.as_view()),
+    # path("general/", ContactAPIView.as_view()),
+    # path('update/<int:pk>/', ContactAPIUpdate.as_view()),
+    # path('detail/<int:pk>/', ContactAPIDetail.as_view()),
+    # path('', ContactViewSet.as_view({'get': 'list'})),
+    # path('<int:pk>/', ContactViewSet.as_view({'put': 'update'})),
 ]
