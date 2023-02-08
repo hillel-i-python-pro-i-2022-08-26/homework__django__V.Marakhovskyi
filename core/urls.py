@@ -30,7 +30,7 @@ urlpatterns = [
     path("session/", include("apps.session_info.urls")),
     path("auth/", include("apps.register.urls")),
     path("middleware/", include("apps.middleware_custom.urls")),
-    # path("api/v1/", include("apps.crud_drf.urls")),
+    path("api/v1/", include("apps.crud_drf.urls")),
     path("api/v1/", include(router.urls)),
 ]
 
