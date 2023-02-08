@@ -61,11 +61,13 @@ LOCAL_APPS = [
     "apps.session_info.apps.SessionsConfig",
     "apps.register.apps.RegisterConfig",
     "apps.middleware_custom.apps.MiddlewareCustomConfig",
+    "apps.crud_drf.apps.CrudDrfConfig",
 ]
 
 THIRD_PARTY_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
+    "rest_framework",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -179,3 +181,5 @@ MEDIA_ROOT = BASE_DIR.joinpath("media")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGOUT_REDIRECT_URL = "/"
+
+REST_FRAMEWORK = {"DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination", "PAGE_SIZE": 3}
